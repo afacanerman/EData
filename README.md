@@ -1,2 +1,2 @@
 # EData
-Odata vnext version
+Odata .net core 1 (dnxcore50) version
