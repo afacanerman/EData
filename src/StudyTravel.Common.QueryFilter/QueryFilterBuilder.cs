@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Linq.Dynamic;
 
 namespace StudyTravel.Common.QueryFilter
 {
@@ -35,13 +36,8 @@ namespace StudyTravel.Common.QueryFilter
 
                     var splitedSortBy = dataQueryModel.SortBy.Split(',');
                     var multipleSortByStr = string.Join(seperator, splitedSortBy) + $" {orderType}";
-
-                    foreach (var property in splitedSortBy)
-                    {
-                        queryableCollection = dataQueryModel.Desc
-                                            ? queryableCollection.OrderByDescending(x => GetPropertyValue(x, property))
-                                            : queryableCollection.OrderBy(x => GetPropertyValue(x, property));
-                    }
+                    
+                    queryableCollection = queryableCollection.OrderBy(multipleSortByStr);
                 }
 
             }
