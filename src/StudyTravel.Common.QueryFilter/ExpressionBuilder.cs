@@ -110,6 +110,10 @@ namespace StudyTravel.Common.QueryFilter
             {
                 right = Expression.Constant(Convert.ToDateTime(value));
             }
+            else if (childProperty.PropertyType == typeof(DateTimeOffset))
+            {
+                right = Expression.Constant(Convert.ToDateTime(value));
+            }
             else if (childProperty.PropertyType == typeof(bool))
             {
                 right = Expression.Constant(Convert.ToBoolean(value));
