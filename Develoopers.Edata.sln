@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{041016D3-B337-4EB6-8DE2-3EDB1A740F2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F317CE56-169F-425E-B05B-F6BD911D7007}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		global.json = global.json
+		prebuild.ps1 = prebuild.ps1
+		version-bump.ps1 = version-bump.ps1
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Develoopers.Edata", "src\Develoopers.Edata\Develoopers.Edata.xproj", "{79515817-9D09-47B5-AFD4-4B71FB162ABF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{594C1434-3967-4C51-8BDF-6483464B3F8F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Develoopers.Edata.Test", "test\Develoopers.Edata.Test\Develoopers.Edata.Test.xproj", "{1444EFBC-A867-422D-80EE-A4059A9E7FB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79515817-9D09-47B5-AFD4-4B71FB162ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79515817-9D09-47B5-AFD4-4B71FB162ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79515817-9D09-47B5-AFD4-4B71FB162ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79515817-9D09-47B5-AFD4-4B71FB162ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1444EFBC-A867-422D-80EE-A4059A9E7FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1444EFBC-A867-422D-80EE-A4059A9E7FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1444EFBC-A867-422D-80EE-A4059A9E7FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1444EFBC-A867-422D-80EE-A4059A9E7FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{79515817-9D09-47B5-AFD4-4B71FB162ABF} = {041016D3-B337-4EB6-8DE2-3EDB1A740F2C}
+		{1444EFBC-A867-422D-80EE-A4059A9E7FB5} = {594C1434-3967-4C51-8BDF-6483464B3F8F}
+	EndGlobalSection
+EndGlobal

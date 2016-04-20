@@ -1,0 +1,12 @@
+version: 1.0.{build}
+before_build:
+- ps: .\prebuild
+after_build:
+- cmd: dnu publish src/StudyTravel.Common.QueryFilter
+test_script:
+- cmd: dnx -p test/StudyTravel.Common.QueryFilter.Test test
+artifacts:
+- path: src\StudyTravel.Common.QueryFilter\bin\output\approot
+  name: AppRoot
+build:
+  verbosity: normal
