@@ -15,7 +15,7 @@ namespace StudyTravel.Common.QueryFilter
         {
             var parameterExpression = Expression.Parameter(typeof(T), typeof(T).Name);
             return
-                (Expression<Func<T, bool>>)BuildNavigationExpression(parameterExpression, comparer, value, properties.Length > 1,  properties);
+                (Expression<Func<T, bool>>)BuildNavigationExpression(parameterExpression, comparer, value, properties.Length > 1, properties);
         }
 
         private static Expression BuildNavigationExpression(Expression parameter, Filter comparer,
@@ -42,7 +42,7 @@ namespace StudyTravel.Common.QueryFilter
                 }
                 //skip current property and get navigation property expression recursivly
                 var innerProperties = properties.Skip(1).ToArray();
-                
+
                 predicate = BuildNavigationExpression(childParameter, comparer, value, isNested, innerProperties);
                 if (isCollection)
                 {
@@ -57,7 +57,7 @@ namespace StudyTravel.Common.QueryFilter
             else
             {
                 //build final predicate
-                
+
                 resultExpression = BuildCondition(parameter, properties[0], comparer, value, isNested);
             }
             return resultExpression;
@@ -87,7 +87,7 @@ namespace StudyTravel.Common.QueryFilter
                 return MakeLambda(parameter, predicate);
             }
 
-            return MakeLambda(parameter,buildComparsion);
+            return MakeLambda(parameter, buildComparsion);
         }
 
         private static Expression GetRightExpression(PropertyInfo childProperty, object value)
