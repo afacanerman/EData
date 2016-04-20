@@ -19,7 +19,7 @@ namespace StudyTravel.Common.QueryFilter.Test
                 new TestModel { Id = 4, Name = "john"},
             };
 
-            var result = QueryFilterBuilder<TestModel>.Build(dummyList.AsQueryable(),
+            var result = StudyTravel.Common.QueryFilter.QueryFilterBuilder<TestModel>.Build(dummyList.AsQueryable(),
                 new DataQueryModel {Filter = "equals(\"Id\",\"2\")"}).ToList();
 
             result.Count.Should().Be(1);
@@ -375,9 +375,24 @@ namespace StudyTravel.Common.QueryFilter.Test
             data.Last().Id.Should().Be(2);
         }
 
+        [Fact]
+        public void Should_Create_query_for_boolean()
+        {
+            IQueryable<TestModel> dummyList = new List<TestModel>
+            {
+                new TestModel() {Id = 1, IsItTrue = true},
+                new TestModel() {Id = 2, IsItTrue = false},
+                new TestModel() {Id = 3, IsItTrue = true},
+            }.AsQueryable(); 
+
+            var query = QueryFilterBuilder<TestModel>.Build(dummyList, new DataQueryModel { Filter = "Equals(\"IsItTrue\",\"true\")" });
+            var data = query.ToList();
+        }
+
         public class TestModel
         {
             public int Id { get; set; }
+            public bool IsItTrue { get; set; }
             public string Name { get; set; }
             public int OrganisationType { get; set; }
             public NestedObj NestedObj { get; set; }    

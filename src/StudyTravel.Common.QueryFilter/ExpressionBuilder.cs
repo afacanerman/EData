@@ -118,6 +118,11 @@ namespace StudyTravel.Common.QueryFilter
             {
                 right = Expression.Constant(Convert.ToBoolean(value));
             }
+            else if (childProperty.PropertyType == typeof(bool?))
+            {
+                var newValue = ToNullableBoolean(value.ToString());
+                right = Expression.Constant(newValue, typeof(bool?));
+            }
             else if (childProperty.PropertyType == typeof(string))
             {
                 right = Expression.Constant(Convert.ToString(value));
@@ -130,6 +135,13 @@ namespace StudyTravel.Common.QueryFilter
         {
             int i;
             if (TryParse(s, out i)) return i;
+            return null;
+        }
+
+        public static bool? ToNullableBoolean(string s)
+        {
+            bool i;
+            if (bool.TryParse(s, out i)) return i;
             return null;
         }
 
