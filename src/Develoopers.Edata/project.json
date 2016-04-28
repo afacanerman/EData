@@ -1,0 +1,25 @@
+﻿{
+  "version": "1.0.42",
+  "description": "Develoopers.Edata Library",
+  "authors": [
+    "Erman"
+  ],
+  "tags": [
+    ""
+  ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "System.Linq.Dynamic.Library": "1.1.14"
+  },
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "LinqKit": "1.1.3.1"
+      }
+    }
+  },
+  "scripts": {
+    "postbuild": "powershell.exe -executionpolicy UnRestricted ..\\..\\version-bump.ps1 -filePath \"project.json"
+  }
+}

@@ -1,0 +1,12 @@
+version: 1.0.{build}
+before_build:
+- ps: .\prebuild
+after_build:
+- cmd: dnu publish src/Develoopers.Edata
+test_script:
+- cmd: dnx -p test/Develoopers.Edata.Test test
+artifacts:
+- path: src\Develoopers.Edata\bin\output\approot
+  name: AppRoot
+build:
+  verbosity: normal
