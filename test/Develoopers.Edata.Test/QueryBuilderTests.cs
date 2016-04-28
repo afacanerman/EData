@@ -749,6 +749,28 @@ namespace Develoopers.Edata.Test
             data.Count.Should().Be(3);
         }
 
+        [Fact]
+        public void Should_apply_sort_and_take()
+        {
+            var now = DateTime.UtcNow;
+            var dummyList = new List<TestModel>
+            {
+                new TestModel {Id = 1, IsTrue = true, StartDate = now.AddDays(-5)},
+                new TestModel {Id = 2, IsTrue = true, StartDate = now.AddDays(-2)},
+                new TestModel {Id = 3, IsTrue = true, StartDate = now.AddDays(-1)},
+                new TestModel {Id = 4, IsTrue = true, StartDate = now.AddDays(-4)},
+                new TestModel {Id = 5, IsTrue = true, StartDate = now.AddDays(-3)},
+            }.AsQueryable();
+
+            var query = QueryFilterBuilder<TestModel>.Build(dummyList, new DataQueryModel { Take = 2, Filter = "Equals(\"IsTrue\",\"true\")", SortBy = "StartDate", Desc = true });
+
+            var data = query.ToList();
+            data.Count.Should().Be(2);
+
+            data.First().StartDate.Should().Be(now.AddDays(-1));
+            data.Last().StartDate.Should().Be(now.AddDays(-2));
+        }
+
         public class TestModel
         {
             public int Id { get; set; }

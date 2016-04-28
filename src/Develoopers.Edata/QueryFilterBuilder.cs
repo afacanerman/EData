@@ -19,6 +19,17 @@ namespace Develoopers.Edata
                     queryableCollection = queryableCollection.Filter<T>(stFilter.Filters);
                 }
 
+                if (!string.IsNullOrWhiteSpace(dataQueryModel.SortBy))
+                {
+                    var orderType = dataQueryModel.Desc ? Descending : Ascending;
+                    var seperator = $" {orderType},";
+
+                    var splitedSortBy = dataQueryModel.SortBy.Split(',');
+                    var multipleSortByStr = string.Join(seperator, splitedSortBy) + $" {orderType}";
+
+                    queryableCollection = queryableCollection.OrderBy(multipleSortByStr);
+                }
+
                 if (dataQueryModel.Skip > 0)
                 {
                     queryableCollection = queryableCollection.Skip(dataQueryModel.Skip);
@@ -29,16 +40,7 @@ namespace Develoopers.Edata
                     queryableCollection = queryableCollection.Take(dataQueryModel.Take);
                 }
 
-                if (!string.IsNullOrWhiteSpace(dataQueryModel.SortBy))
-                {
-                    var orderType = dataQueryModel.Desc ? Descending : Ascending;
-                    var seperator = $" {orderType},";
 
-                    var splitedSortBy = dataQueryModel.SortBy.Split(',');
-                    var multipleSortByStr = string.Join(seperator, splitedSortBy) + $" {orderType}";
-                    
-                    queryableCollection = queryableCollection.OrderBy(multipleSortByStr);
-                }
 
             }
 
