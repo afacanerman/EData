@@ -6,8 +6,5 @@ after_build:
 - cmd:  echo %cd% && cd src\Develoopers.Edata && dnu pack --configuration Release 
 test_script:
 - cmd: dnx -p C:\projects\edata\test\Develoopers.Edata.Test test
-artifacts:
-- path: C:\projects\edata\src\Develoopers.Edata\bin\output\approot
-  name: AppRoot
 build:
   verbosity: normal
