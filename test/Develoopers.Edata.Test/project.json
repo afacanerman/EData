@@ -1,7 +1,7 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.1-rc1",
   "description": "Develoopers.Edata.Test Class Library",
-  "authors": [ "danie" ],
+  "authors": [ "Develoopers" ],
   "tags": [ "" ],
   "projectUrl": "",
   "licenseUrl": "",
