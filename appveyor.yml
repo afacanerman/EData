@@ -3,6 +3,7 @@ before_build:
 - ps: .\prebuild
 after_build:
 - cmd: dnu publish src/Develoopers.Edata
+- cmd: dnu pack --configuration Release 
 test_script:
 - cmd: dnx -p test/Develoopers.Edata.Test test
 artifacts:
