@@ -16,7 +16,7 @@ namespace Develoopers.Edata
                 if (!string.IsNullOrWhiteSpace(dataQueryModel.Filter))
                 {
                     var stFilter = new FilterParser(dataQueryModel.Filter);
-                    queryableCollection = queryableCollection.Filter<T>(stFilter.Filters);
+                    queryableCollection = queryableCollection.Filter(stFilter.Filters);
                 }
 
                 if (!string.IsNullOrWhiteSpace(dataQueryModel.SortBy))
@@ -39,9 +39,6 @@ namespace Develoopers.Edata
                 {
                     queryableCollection = queryableCollection.Take(dataQueryModel.Take);
                 }
-
-
-
             }
 
             return queryableCollection;
@@ -61,6 +58,43 @@ namespace Develoopers.Edata
             {
                 return null;
             }
+        }
+
+        public static QueryResult<T> BuildQueryResult(IQueryable<T> queryableCollection, DataQueryModel dataQueryModel)
+        {
+            if (queryableCollection == null) throw new ArgumentNullException(nameof(queryableCollection));
+            if (dataQueryModel == null) throw new ArgumentNullException(nameof(dataQueryModel));
+
+            if (!string.IsNullOrWhiteSpace(dataQueryModel.SortBy))
+            {
+                var orderType = dataQueryModel.Desc ? Descending : Ascending;
+                var seperator = $" {orderType},";
+
+                var splitedSortBy = dataQueryModel.SortBy.Split(',');
+                var multipleSortByStr = string.Join(seperator, splitedSortBy) + $" {orderType}";
+
+                queryableCollection = queryableCollection.OrderBy(multipleSortByStr);
+            }
+
+            if (!string.IsNullOrWhiteSpace(dataQueryModel.Filter))
+            {
+                var stFilter = new FilterParser(dataQueryModel.Filter);
+                queryableCollection = queryableCollection.Filter<T>(stFilter.Filters);
+            }
+
+            // once the filter is applied get the count
+            var count = queryableCollection.Count();
+
+            if (dataQueryModel.Skip > 0)
+            {
+                queryableCollection = queryableCollection.Skip(dataQueryModel.Skip);
+            }
+
+            if (dataQueryModel.Take > 0)
+            {
+                queryableCollection = queryableCollection.Take(dataQueryModel.Take);
+            }
+            return new QueryResult<T>(count, queryableCollection);
         }
     }
 }
