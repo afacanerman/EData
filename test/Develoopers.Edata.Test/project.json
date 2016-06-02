@@ -10,13 +10,10 @@
     "xunit.runner.dnx": "2.1.0-rc1-build204",
     "FluentAssertions": "4.0.1",
     "Moq": "4.2.1510.2205",
-    "Develoopers.Edata": ""
+    "Develoopers.Edata": "1.0.46-rc2-1"
   },
   "frameworks": {
-    "dnx451": {
-      "dependencies": {
-      }
-    }
+    "dnx461": {}
   },
   "commands": {
     "test": "xunit.runner.dnx"
