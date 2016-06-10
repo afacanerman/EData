@@ -860,7 +860,7 @@
           "lib/net35/xunit.runner.utility.desktop.dll": {}
         }
       },
-      "Develoopers.Edata/1.0.0": {
+      "Develoopers.Edata/1.0.46-rc2-1": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.6.1",
         "dependencies": {
@@ -3687,7 +3687,7 @@
         "xunit.runner.utility.nuspec"
       ]
     },
-    "Develoopers.Edata/1.0.0": {
+    "Develoopers.Edata/1.0.46-rc2-1": {
       "type": "project",
       "path": "../../src/Develoopers.Edata/project.json",
       "msbuildProject": "../../src/Develoopers.Edata/Develoopers.Edata.xproj"
@@ -3695,7 +3695,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Develoopers.Edata >= 1.0.0-*",
+      "Develoopers.Edata >= 1.0.46-rc2-1",
       "FluentAssertions >= 4.0.1",
       "Moq >= 4.2.1510.2205",
       "dotnet-test-xunit >= 1.0.0-rc2-build10015",

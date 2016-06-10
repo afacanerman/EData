@@ -9,13 +9,13 @@ namespace Develoopers.Edata
     {
         // look at the tests to understand the pattern
         private const string FilterPattern = "(?<Filter>(?<Function>(startswith|contains|equals|gt|lt|ge|le))(\\(\"(?<PropertyName>.+?)\",\"(?<Value>.+?)\"\\)))(?<Sep>:\\s*$|\\s+(?:or|and|not)\\s+|\\s)";
-        private const string StrReplace = @"function:${Function}" + "\n" + @"PropertyName:${PropertyName}" +
-                                            "\n" + @"Value:${Value}" + "\n" + @"Sep:${Sep}" + "\n";
+        private const string StrReplace = @"function=${Function}" + "\n" + @"PropertyName=${PropertyName}" +
+                                            "\n" + @"Value=${Value}" + "\n" + @"Sep=${Sep}" + "\n";
         private const char Separator = '\n';
 
         private const string SingleFilterPattern = "(?<Filter>(?<Function>(startswith|contains|equals|gt|lt|ge|le))(\\(\"(?<PropertyName>.+?)\",\"(?<Value>.+?)\"\\)))";
-        private const string SingleStrReplace = @"function:${Function}" + "\n" + @"PropertyName:${PropertyName}" +
-                                            "\n" + @"Value:${Value}" + "\n";
+        private const string SingleStrReplace = @"function=${Function}" + "\n" + @"PropertyName=${PropertyName}" +
+                                            "\n" + @"Value=${Value}" + "\n";
 
 
         private readonly IList<IFilter> _filterFunctionList = new List<IFilter>();
@@ -57,7 +57,7 @@ namespace Develoopers.Edata
             {
                 if (string.IsNullOrEmpty(item)) break;
 
-                var splittedItem = item.Split(':');
+                var splittedItem = item.Split('=');
 
                 var key = FirstCharToUpper(splittedItem[0]);
                 var value = splittedItem[1];
@@ -68,7 +68,7 @@ namespace Develoopers.Edata
                     {
                         _filterFunctionList.Add(new FilterFunction
                         {
-                            FilterType = (Filter) Enum.Parse(typeof (Filter), FirstCharToUpper(value))
+                            FilterType = (Filter)Enum.Parse(typeof(Filter), FirstCharToUpper(value))
                         });
                     }
                     catch (Exception)

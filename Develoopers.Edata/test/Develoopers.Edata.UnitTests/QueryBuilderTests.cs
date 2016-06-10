@@ -556,7 +556,7 @@ namespace Develoopers.Edata.UnitTest
                 new TestModel {Id = 8, StartDate = DateTimeOffset.UtcNow.AddMonths(-8)}
             }.AsQueryable();
 
-            var query = QueryFilterBuilder<TestModel>.Build(dummyList, new DataQueryModel { Filter = $"Gt(\"StartDate\",\"{DateTimeOffset.UtcNow.Date.ToShortDateString()}\")" });
+            var query = QueryFilterBuilder<TestModel>.Build(dummyList, new DataQueryModel { Filter = $"Gt(\"StartDate\",\"{DateTimeOffset.UtcNow.Date}\")" });
             var data = query.ToList();
 
             data.Count.Should().Be(1);

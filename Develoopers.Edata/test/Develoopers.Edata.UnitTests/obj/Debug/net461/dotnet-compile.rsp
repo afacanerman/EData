@@ -6,6 +6,7 @@
 --suppress-warning:CS1701
 --suppress-warning:CS1702
 --suppress-warning:CS1705
+--platform:x86
 --optimize:False
 --output-name:Develoopers.Edata.UnitTests
 --file-version:1.0.0.0

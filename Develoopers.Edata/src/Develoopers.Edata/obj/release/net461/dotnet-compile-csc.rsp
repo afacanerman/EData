@@ -4,6 +4,7 @@
 -nowarn:CS1701
 -nowarn:CS1702
 -nowarn:CS1705
+-platform:x86
 -optimize
 -t:library
 -debug:full
@@ -66,4 +67,5 @@
 "D:\workspace\CoreSpike\Edata\Develoopers.Edata\src\Develoopers.Edata\FilterParser.cs"
 "D:\workspace\CoreSpike\Edata\Develoopers.Edata\src\Develoopers.Edata\QueryExtensions.cs"
 "D:\workspace\CoreSpike\Edata\Develoopers.Edata\src\Develoopers.Edata\QueryFilterBuilder.cs"
+"D:\workspace\CoreSpike\Edata\Develoopers.Edata\src\Develoopers.Edata\QueryResult.cs"
 "D:\workspace\CoreSpike\Edata\Develoopers.Edata\src\Develoopers.Edata\Properties\AssemblyInfo.cs"
