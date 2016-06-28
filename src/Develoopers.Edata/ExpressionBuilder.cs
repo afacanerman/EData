@@ -105,13 +105,15 @@ namespace Develoopers.Edata
             {
                 right = Expression.Constant(Convert.ToDouble(value));
             }
-            else if (childProperty.PropertyType == typeof(DateTime))
+            else if (childProperty.PropertyType == typeof(DateTime) || childProperty.PropertyType == typeof(DateTime?))
             {
-                right = Expression.Constant(Convert.ToDateTime(value));
+                var convertedDateTime = UrlHelper.Decode(value.ToString());
+                right = Expression.Constant(Convert.ToDateTime(convertedDateTime));
             }
-            else if (childProperty.PropertyType == typeof(DateTimeOffset))
+            else if (childProperty.PropertyType == typeof(DateTimeOffset) || childProperty.PropertyType == typeof(DateTimeOffset?))
             {
-                right = Expression.Constant(Convert.ToDateTime(value));
+                var convertedDateTime = UrlHelper.Decode(value.ToString());
+                right = Expression.Constant(DateTimeOffset.Parse(convertedDateTime));
             }
             else if (childProperty.PropertyType == typeof(bool))
             {
