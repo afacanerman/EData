@@ -1,0 +1,135 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.1": {
+      "EntityFramework/6.1.3": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "FluentValidationNA/1.2.16": {
+        "type": "package",
+        "compile": {
+          "lib/net40/FluentValidationNA.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FluentValidationNA.dll": {}
+        }
+      },
+      "LinqKit/1.1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "6.1.3"
+        },
+        "compile": {
+          "lib/net45/LinqKit.dll": {}
+        },
+        "runtime": {
+          "lib/net45/LinqKit.dll": {}
+        }
+      },
+      "System.Linq.Dynamic.Library/1.1.14": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidationNA": "1.2.16"
+        },
+        "compile": {
+          "lib/net40/System.Linq.Dynamic.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Linq.Dynamic.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EntityFramework/6.1.3": {
+      "sha512": "2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw==",
+      "type": "package",
+      "files": [
+        "EntityFramework.6.1.3.nupkg.sha512",
+        "EntityFramework.nuspec",
+        "content/App.config.transform",
+        "content/Web.config.transform",
+        "lib/net40/EntityFramework.SqlServer.dll",
+        "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
+        "lib/net40/EntityFramework.xml",
+        "lib/net45/EntityFramework.SqlServer.dll",
+        "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
+        "lib/net45/EntityFramework.xml",
+        "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
+        "tools/EntityFramework.psd1",
+        "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
+        "tools/init.ps1",
+        "tools/install.ps1",
+        "tools/migrate.exe"
+      ]
+    },
+    "FluentValidationNA/1.2.16": {
+      "sha512": "6VVx9+/okkhSWEHS4PDRQZPVz+fUTBX5zxMlNnE70ZoMWHv5ZKBT++t2HaTjmm3j71OGEUvSBkXcTJKHUPgQfw==",
+      "type": "package",
+      "files": [
+        "FluentValidationNA.1.2.16.nupkg.sha512",
+        "FluentValidationNA.nuspec",
+        "lib/net35/FluentValidationNA.XML",
+        "lib/net35/FluentValidationNA.dll",
+        "lib/net40/FluentValidationNA.XML",
+        "lib/net40/FluentValidationNA.dll",
+        "lib/portable-net40+sl50+wp80+win/FluentValidationNA.XML",
+        "lib/portable-net40+sl50+wp80+win/FluentValidationNA.dll"
+      ]
+    },
+    "LinqKit/1.1.3.1": {
+      "sha512": "cGmKybq4dncjtgAPx4W98ldwoPsv0JnNwnuhOUfgcSfOdTmSGFmrWrv4hBUe8lrYQgg5xdQO1a0f5Z8v2ecDng==",
+      "type": "package",
+      "files": [
+        "LinqKit.1.1.3.1.nupkg.sha512",
+        "LinqKit.nuspec",
+        "lib/net35/LinqKit.XML",
+        "lib/net35/LinqKit.dll",
+        "lib/net35/LinqKit.pdb",
+        "lib/net45/LinqKit.XML",
+        "lib/net45/LinqKit.dll",
+        "lib/net45/LinqKit.dll.config",
+        "lib/net45/LinqKit.pdb"
+      ]
+    },
+    "System.Linq.Dynamic.Library/1.1.14": {
+      "sha512": "ZBtE4ud9UEqYrNZ2PnMaMB4YeglJa+efDCrYwNr+nlhkBAGhuljILN9rd/gi0rLuE8oXW4pCMcZSsAZI+K9uOg==",
+      "type": "package",
+      "files": [
+        "System.Linq.Dynamic.Library.1.1.14.nupkg.sha512",
+        "System.Linq.Dynamic.Library.nuspec",
+        "lib/net35/System.Linq.Dynamic.XML",
+        "lib/net35/System.Linq.Dynamic.dll",
+        "lib/net40/System.Linq.Dynamic.XML",
+        "lib/net40/System.Linq.Dynamic.dll",
+        "lib/sl50/System.Linq.Dynamic.SL.XML",
+        "lib/sl50/System.Linq.Dynamic.SL.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "LinqKit >= 1.1.3.1",
+      "System.Linq.Dynamic.Library >= 1.1.14"
+    ],
+    ".NETFramework,Version=v4.6.1": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
+}
