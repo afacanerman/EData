@@ -1,0 +1,21 @@
+﻿{
+  "version": "1.0.46-rc1",
+  "description": "Develoopers.Edata.Test Class Library",
+  "authors": [ "Develoopers" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-rc1-build204",
+    "FluentAssertions": "4.0.1",
+    "Moq": "4.2.1510.2205",
+    "Develoopers.Edata": "1.0.46-rc2-1"
+  },
+  "frameworks": {
+    "dnx461": {}
+  },
+  "commands": {
+    "test": "xunit.runner.dnx"
+  }
+}

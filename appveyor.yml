@@ -1,0 +1,11 @@
+version: 1.0.{build}
+before_build:
+- ps: .\prebuild
+after_build:
+- cmd: dnu publish src/Develoopers.Edata
+- cmd: echo %cd% && cd src\Develoopers.Edata && dnu pack --configuration Release 
+- cmd: cd C:\projects\edata\
+test_script:
+- cmd: dnx -p C:\projects\edata\test\Develoopers.Edata.Test test
+build:
+  verbosity: normal

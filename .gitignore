@@ -15,17 +15,26 @@
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+<<<<<<< HEAD
 [Xx]64/
 [Xx]86/
 [Bb]uild/
+=======
+x64/
+x86/
+build/
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 bld/
 [Bb]in/
 [Oo]bj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
+<<<<<<< HEAD
 # Uncomment if you have tasks that create the project's static files in wwwroot
 wwwroot/logs/
+=======
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -76,17 +85,26 @@ _Chutzpah*
 ipch/
 *.aps
 *.ncb
+<<<<<<< HEAD
 *.opendb
 *.opensdf
 *.sdf
 *.cachefile
 *.VC.db
+=======
+*.opensdf
+*.sdf
+*.cachefile
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 
 # Visual Studio profiler
 *.psess
 *.vsp
 *.vspx
+<<<<<<< HEAD
 *.sap
+=======
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 
 # TFS 2012 Local Workspace
 $tf/
@@ -111,7 +129,10 @@ _TeamCity*
 # NCrunch
 _NCrunch_*
 .*crunch*.local.xml
+<<<<<<< HEAD
 nCrunchTemp_*
+=======
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 
 # MightyMoose
 *.mm.*
@@ -139,11 +160,19 @@ publish/
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
+<<<<<<< HEAD
 
 # TODO: Un-comment the next line if you do not want to checkin 
 # your web deploy settings because they may include unencrypted
 # passwords
 #*.pubxml
+=======
+## TODO: Comment the next line if you want to checkin your
+## web deploy settings but do note that will include unencrypted
+## passwords
+#*.pubxml
+
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 *.publishproj
 
 # NuGet Packages
@@ -154,6 +183,7 @@ publish/
 !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
+<<<<<<< HEAD
 # NuGet v3's project.json files produces more ignoreable files
 *.nuget.props
 *.nuget.targets
@@ -172,6 +202,15 @@ ApplicationInsights.config
 # Windows Store app package directory
 AppPackages/
 BundleArtifacts/
+=======
+
+# Windows Azure Build Output
+csx/
+*.build.csdef
+
+# Windows Store app package directory
+AppPackages/
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 
 # Visual Studio cache files
 # files ending in .cache can be ignored
@@ -214,9 +253,12 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
+<<<<<<< HEAD
 # GhostDoc plugin setting file
 *.GhostDoc.xml
 
+=======
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 
@@ -226,6 +268,7 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
+<<<<<<< HEAD
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts
 **/*.DesktopClient/GeneratedArtifacts
@@ -243,3 +286,9 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+=======
+# LightSwitch generated files
+GeneratedArtifacts/
+_Pvt_Extensions/
+ModelManifest.xml
+>>>>>>> cb4938734ed024f52ab289687abf8dfc12d270e8
