@@ -11,7 +11,7 @@
   "testRunner": "xunit",
 
   "frameworks": {
-    "net461": {
+    "net451": {
     }
   }
 
