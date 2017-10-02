@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Develoopers.Edata Library</Description>
+    <VersionPrefix>1.0.46</VersionPrefix>
+    <Authors>Erman</Authors>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Develoopers.Edata</AssemblyName>
+    <PackageId>Develoopers.Edata</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="1.1.10" />
+    <PackageReference Include="Microsoft.Linq.Dynamic" Version="1.0.0" />
+<!--    <PackageReference Include="System.Linq.Dynamic.Library" Version="1.1.14" />-->
+  </ItemGroup>
+
+</Project>
