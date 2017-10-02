@@ -20,16 +20,16 @@ namespace Develoopers.Edata
         private static Expression BuildNavigationExpression(Expression parameter, Filter comparer,
             object value, bool isNested = false, params string[] properties)
         {
-            Expression resultExpression = null;
-            Expression childParameter, predicate;
+            Expression resultExpression;
             Type childType = null;
 
-            if (properties.Count() > 1)
+            if (properties.Length > 1)
             {
                 //build path
                 parameter = Expression.Property(parameter, properties[0]);
                 var isCollection = typeof(IEnumerable).IsAssignableFrom(parameter.Type);
                 //if it´s a collection we later need to use the predicate in the methodexpressioncall
+                Expression childParameter;
                 if (isCollection)
                 {
                     childType = parameter.Type.GetGenericArguments()[0];
@@ -42,7 +42,7 @@ namespace Develoopers.Edata
                 //skip current property and get navigation property expression recursivly
                 var innerProperties = properties.Skip(1).ToArray();
 
-                predicate = BuildNavigationExpression(childParameter, comparer, value, isNested, innerProperties);
+                var predicate = BuildNavigationExpression(childParameter, comparer, value, isNested, innerProperties);
                 if (isCollection)
                 {
                     //build subquery
@@ -134,15 +134,19 @@ namespace Develoopers.Edata
 
         public static int? ToNullableInt32(string s)
         {
-            int i;
-            if (Int32.TryParse(s, out i)) return i;
+            if (int.TryParse(s, out var i))
+            {
+                return i;
+            }
             return null;
         }
 
         public static bool? ToNullableBoolean(string s)
         {
-            bool i;
-            if (bool.TryParse(s, out i)) return i;
+            if (bool.TryParse(s, out var i))
+            {
+                return i;
+            }
             return null;
         }
 
@@ -168,15 +172,13 @@ namespace Develoopers.Edata
 
         private static Expression BuildStringCondition(Expression left, Filter comparer, Expression right)
         {
-            var compareMethod =
-                typeof(string).GetMethods()
-                    .Single(
-                        m =>
-                            m.Name.Equals(Enum.GetName(typeof(Filter), comparer)) &&
-                            m.GetParameters().Count() == 1);
+            var compareMethod = typeof(string).GetMethods() .Single(m =>
+                m.Name.Equals(Enum.GetName(typeof(Filter), comparer)) &&
+                m.GetParameters().Length == 1 && m.GetParameters().First().ParameterType == typeof(string));
+
             //we assume ignoreCase, so call ToLower on paramter and memberexpression
             var toLowerMethod =
-                typeof(string).GetMethods().Single(m => m.Name.Equals("ToLower") && m.GetParameters().Count() == 0);
+                typeof(string).GetMethods().Single(m => m.Name.Equals("ToLower") && m.GetParameters().Length == 0);
             left = Expression.Call(left, toLowerMethod);
             right = Expression.Call(right, toLowerMethod);
             return Expression.Call(left, compareMethod, right);

@@ -9,7 +9,7 @@ namespace Develoopers.Edata
     {
         public static IQueryable<T> Filter<T>(this IQueryable<T> query, IList<IFilter> filters)
         {
-            var predicate = PredicateBuilder.True<T>();
+            var predicate = PredicateBuilder.New<T>(true);
             foreach (var filter in filters)
             {
                 var expression = ExpressionBuilder.BuildPredicate<T>(filter.Value,
