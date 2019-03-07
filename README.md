@@ -1,6 +1,6 @@
 # EData
 
-Lightweight querybuilder from querystring like Odata - for asp.net 5 (.net core)
+Lightweight querybuilder from querystring like Odata - for dotnet core)
 
 How To Use:
  
