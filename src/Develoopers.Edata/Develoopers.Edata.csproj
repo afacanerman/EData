@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="1.1.10" />
+    <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="1.1.11" />
     <PackageReference Include="Microsoft.Linq.Dynamic" Version="1.0.0" />
 <!--    <PackageReference Include="System.Linq.Dynamic.Library" Version="1.1.14" />-->
   </ItemGroup>
